@@ -1,4 +1,4 @@
-function PLUGIN:PlayerLiliaDataLoaded(client)
+function MODULE:PlayerLiliaDataLoaded(client)
     lia.char.restore(client, function(charList)
         if not IsValid(client) then return end
         MsgN("Loaded (" .. table.concat(charList, ", ") .. ") for " .. client:Name())
@@ -22,7 +22,7 @@ function PLUGIN:PlayerLiliaDataLoaded(client)
     end)
 end
 
-function PLUGIN:PostPlayerInitialSpawn(client)
+function MODULE:PostPlayerInitialSpawn(client)
     client:SetNoDraw(true)
     client:SetNotSolid(true)
     client:Lock()
@@ -34,11 +34,11 @@ function PLUGIN:PostPlayerInitialSpawn(client)
     end)
 end
 
-function PLUGIN:PlayerLoadedChar(client, character, oldCharacter)
+function MODULE:PlayerLoadedChar(client, character, oldCharacter)
     client:Spawn()
 end
 
-function PLUGIN:OnCharCreated(client, character)
+function MODULE:OnCharCreated(client, character)
     local id = character:getID()
     MsgN("Created character '" .. id .. "' for " .. client:steamName() .. ".")
 end

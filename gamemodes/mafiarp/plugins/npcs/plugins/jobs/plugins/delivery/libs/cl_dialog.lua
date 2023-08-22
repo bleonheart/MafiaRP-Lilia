@@ -1,4 +1,4 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
 net.Receive("ui_delivery_npc", function()
     talkablenpcs.dialog("Pierce Bowman", "models/odessa.mdl", "Manager", "Speedy Delivery", function(ply)
@@ -88,7 +88,7 @@ net.Receive("ui_delivery_hired_npc", function()
                     self.frame:MakePopup()
                     local fr = self.frame
 
-                    for k, v in pairs(PLUGIN.DeliveryNPCLocations) do
+                    for k, v in pairs(MODULE.DeliveryNPCLocations) do
                         self.button = vgui.Create("WButton", self.frame)
                         self.button:SetText(k .. " (" .. lia.currency.get(v.Pay) .. ")")
                         self.button:Dock(TOP)

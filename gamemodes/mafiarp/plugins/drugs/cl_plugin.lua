@@ -1,4 +1,4 @@
-function PLUGIN:Think()
+function MODULE:Think()
     local client = LocalPlayer()
 
     if client:getChar() and (client.nextDrugCheck or 0) < CurTime() then
@@ -15,7 +15,7 @@ function PLUGIN:Think()
     end
 end
 
-function PLUGIN:RenderScreenspaceEffects()
+function MODULE:RenderScreenspaceEffects()
     if self.glare then
         local colorMod = {}
         colorMod["$pp_colour_addr"] = 0

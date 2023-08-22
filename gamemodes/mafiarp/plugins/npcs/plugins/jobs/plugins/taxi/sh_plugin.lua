@@ -1,6 +1,6 @@
-PLUGIN.name = "Taxi NPC"
-PLUGIN.author = "Leonheart#7476"
-PLUGIN.desc = "Taxi Job Module"
+MODULE.name = "Taxi NPC"
+MODULE.author = "STEAM_0:1:176123778"
+MODULE.desc = "Taxi Job Module"
 ------------------------------------------------------------------------------------------
 lia.util.include("sv_plugin.lua")
 ------------------------------------------------------------------------------------------

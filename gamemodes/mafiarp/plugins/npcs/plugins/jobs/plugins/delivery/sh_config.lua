@@ -1,4 +1,4 @@
-PLUGIN.DeliveryNPCLocations = {
+MODULE.DeliveryNPCLocations = {
     ["Delivery Location 1"] = {
         Position = Vector(-7966.578613, -14455.905273, 84.369240),
         Pay = 259

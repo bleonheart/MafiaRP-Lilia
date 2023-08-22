@@ -1,11 +1,11 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
-function PLUGIN:PlayerLoadout(client)
+function MODULE:PlayerLoadout(client)
     client:setNetVar("restricted")
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function PLUGIN:CanPlayerEnterVehicle(ply)
+function MODULE:CanPlayerEnterVehicle(ply)
     if ply:IsHandcuffed() and not ply:IsVehicleAllowed() then
         return false
     elseif ply:IsHandcuffed() and ply:IsVehicleAllowed() then
@@ -21,7 +21,7 @@ hook.Add("PlayerCanHearPlayersVoiceHookTying", "PlayerCanHearPlayersVoiceHookTyi
 end)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function PLUGIN:OnPlayerUnRestricted(client)
+function MODULE:OnPlayerUnRestricted(client)
     local searcher = client:getNetVar("searcher")
 
     if IsValid(searcher) then
@@ -30,7 +30,7 @@ function PLUGIN:OnPlayerUnRestricted(client)
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function PLUGIN:PlayerUse(client, entity)
+function MODULE:PlayerUse(client, entity)
     if not client:getNetVar("restricted") and entity:IsPlayer() and entity:getNetVar("restricted") and not entity.liaBeingUnTied then
         entity.liaBeingUnTied = true
         entity:setAction("@beingUntied", 5)
@@ -55,13 +55,13 @@ function PLUGIN:PlayerUse(client, entity)
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function PLUGIN:PlayerSpawn(ply)
+function MODULE:PlayerSpawn(ply)
     if not ply:getChar() then return end
     ply:FreeTies()
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
 local function liaApproveSearch(len, ply)
     local requester = ply.SearchRequested
@@ -78,7 +78,7 @@ local function liaApproveSearch(len, ply)
     end
 
     if requester:GetPos():DistToSqr(ply:GetPos()) > 250 * 250 then return end
-    PLUGIN:searchPlayer(requester, ply, true)
+    MODULE:searchPlayer(requester, ply, true)
     requester.SearchRequested = nil
     ply.SearchRequested = nil
 end

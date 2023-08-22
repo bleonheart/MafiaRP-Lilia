@@ -1,8 +1,8 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 local ForceJump = {}
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function PLUGIN:Think()
+function MODULE:Think()
     for ply, v in pairs(ForceJump) do
         if not (IsValid(ply) and ply:OnGround()) then
             ForceJump[ply] = nil
@@ -31,7 +31,7 @@ local RenderPos = {
     Gag = {Vector(1.0, 4.2, 2), Vector(1.0, 5.5, -0.1), Vector(1.0, 4.5, -2), Vector(0, 0, -3.4), Vector(-0.8, -3, 0), Vector(0, 0, 3.4)},
 }
 
-function PLUGIN:PostPlayerDraw(ply)
+function MODULE:PostPlayerDraw(ply)
     if not IsValid(ply) or not ply:IsHandcuffed() then return end
     render.SetMaterial(DefaultRope)
 

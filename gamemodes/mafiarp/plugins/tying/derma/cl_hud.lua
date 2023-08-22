@@ -1,6 +1,6 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
-function PLUGIN:DrawCharInfo(client, character, info)
+function MODULE:DrawCharInfo(client, character, info)
     if client:IsHandcuffed() then
         info[#info + 1] = {"Handcuffed", Color(245, 215, 110)}
 
@@ -22,7 +22,7 @@ function PLUGIN:DrawCharInfo(client, character, info)
     end
 end
 
-function PLUGIN:RenderScreenspaceEffects()
+function MODULE:RenderScreenspaceEffects()
     local ply = LocalPlayer()
     if not (ply:IsHandcuffed() and ply:IsBlinded()) then return end
     surface.SetDrawColor(Color(0, 0, 0, 255))

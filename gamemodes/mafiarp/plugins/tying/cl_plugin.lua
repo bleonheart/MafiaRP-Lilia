@@ -1,7 +1,7 @@
-local PLUGIN = PLUGIN
-PLUGIN.searchPanels = PLUGIN.searchPanels or {}
+local MODULE = MODULE
+MODULE.searchPanels = MODULE.searchPanels or {}
 
-function PLUGIN:CanPlayerViewInventory()
+function MODULE:CanPlayerViewInventory()
     if IsValid(LocalPlayer():getNetVar("searcher")) then return false end
 end
 
@@ -35,8 +35,8 @@ if lia.version then
         targetInvPanel.OnRemove = onRemove
         myInvPanel.x = myInvPanel.x + (myInvPanel:GetWide() * 0.5) + 2
         targetInvPanel:MoveLeftOf(myInvPanel, 4)
-        PLUGIN.searchPanels[#PLUGIN.searchPanels + 1] = myInvPanel
-        PLUGIN.searchPanels[#PLUGIN.searchPanels + 1] = targetInvPanel
+        MODULE.searchPanels[#MODULE.searchPanels + 1] = myInvPanel
+        MODULE.searchPanels[#MODULE.searchPanels + 1] = targetInvPanel
     end)
 else
     netstream.Hook("searchPly", function(target, index)
@@ -45,7 +45,7 @@ else
         lia.gui.inv1 = vgui.Create("liaInventory")
         lia.gui.inv1:ShowCloseButton(true)
         lia.gui.inv1:setInventory(LocalPlayer():getChar():getInv())
-        PLUGIN.searchPanels[#PLUGIN.searchPanels + 1] = lia.gui.inv1
+        MODULE.searchPanels[#MODULE.searchPanels + 1] = lia.gui.inv1
         local panel = vgui.Create("liaInventory")
         panel:ShowCloseButton(true)
         panel:SetTitle(target:Name())
@@ -72,16 +72,16 @@ else
         end
 
         lia.gui["inv" .. index] = panel
-        PLUGIN.searchPanels[#PLUGIN.searchPanels + 1] = panel
+        MODULE.searchPanels[#MODULE.searchPanels + 1] = panel
     end)
 end
 
 netstream.Hook("searchExit", function()
-    for _, panel in pairs(PLUGIN.searchPanels) do
+    for _, panel in pairs(MODULE.searchPanels) do
         if IsValid(panel) then
             panel:Remove()
         end
     end
 
-    PLUGIN.searchPanels = {}
+    MODULE.searchPanels = {}
 end)

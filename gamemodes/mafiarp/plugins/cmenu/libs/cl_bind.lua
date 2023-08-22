@@ -1,6 +1,6 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
-function PLUGIN:PlayerBindPress(ply, bind, down)
+function MODULE:PlayerBindPress(ply, bind, down)
     local tr = util.TraceLine(util.GetPlayerTrace(ply))
     local target = tr.Entity
     if not target:IsPlayer() then return end

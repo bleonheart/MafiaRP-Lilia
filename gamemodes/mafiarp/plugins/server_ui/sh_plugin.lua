@@ -1,14 +1,14 @@
-local PLUGIN = PLUGIN
-PLUGIN.name = 'UI'
-PLUGIN.author = 'Bilwin/Leonheart#7476'
-PLUGIN.websiteURL = ''
-PLUGIN.discordURL = ''
-PLUGIN.contentURL = ''
+local MODULE = MODULE
+MODULE.name = 'UI'
+MODULE.author = 'Bilwin/STEAM_0:1:176123778'
+MODULE.websiteURL = ''
+MODULE.discordURL = ''
+MODULE.contentURL = ''
 
-PLUGIN.backgrounds = {lia.util.getMaterial('ui/bg1.png'), lia.util.getMaterial('ui/bg2.png'), lia.util.getMaterial('ui/bg3.png'), lia.util.getMaterial('ui/bg4.png'), lia.util.getMaterial('ui/bg5.png')}
+MODULE.backgrounds = {lia.util.getMaterial('ui/bg1.png'), lia.util.getMaterial('ui/bg2.png'), lia.util.getMaterial('ui/bg3.png'), lia.util.getMaterial('ui/bg4.png'), lia.util.getMaterial('ui/bg5.png')}
 
-lia.util.includeDir(PLUGIN.path .. '/derma/steps', true)
-lia.util.includeDir(PLUGIN.path .. '/new_derma', true)
+lia.util.includeDir(MODULE.path .. '/derma/steps', true)
+lia.util.includeDir(MODULE.path .. '/new_derma', true)
 
 function LerpColor(frac, from, to)
     local col = Color(Lerp(frac, from.r, to.r), Lerp(frac, from.g, to.g), Lerp(frac, from.b, to.b), Lerp(frac, from.a, to.a))
@@ -17,7 +17,7 @@ function LerpColor(frac, from, to)
 end
 
 lia.config.add('music', '', 'The default music played in the character menu.', nil, {
-    category = PLUGIN.name
+    category = MODULE.name
 })
 
 lia.config.add('musicvolume', '0.25', 'The Volume for the music played in the character menu.', nil, {
@@ -26,7 +26,7 @@ lia.config.add('musicvolume', '0.25', 'The Volume for the music played in the ch
         min = 0,
         max = 1
     },
-    category = PLUGIN.name
+    category = MODULE.name
 })
 
 if CLIENT then
@@ -34,7 +34,7 @@ if CLIENT then
         return size * (ScrH() / 900) + 10
     end
 
-    function PLUGIN:LoadFonts(font)
+    function MODULE:LoadFonts(font)
         surface.CreateFont('liaCharTitleFont', {
             font = font,
             weight = 200,
@@ -79,17 +79,17 @@ if CLIENT then
         })
     end
 
-    function PLUGIN:LiliaLoaded()
+    function MODULE:LiliaLoaded()
         vgui.Create('liaNewCharacterMenu')
     end
 
-    function PLUGIN:KickedFromCharacter(id, isCurrentChar)
+    function MODULE:KickedFromCharacter(id, isCurrentChar)
         if isCurrentChar then
             vgui.Create('liaNewCharacterMenu')
         end
     end
 
-    function PLUGIN:CreateMenuButtons(tabs)
+    function MODULE:CreateMenuButtons(tabs)
         tabs['characters'] = function(panel)
             if IsValid(lia.gui.menu) then
                 lia.gui.menu:Remove()

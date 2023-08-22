@@ -1,7 +1,7 @@
-local PLUGIN = PLUGIN or {}
-PLUGIN.name = "Derma Banking Sub-Module"
-PLUGIN.author = "Robert Bearson // Leonheart#7476"
-PLUGIN.desc = "This Module Adds A Derma Library for 1942RP"
+local MODULE = MODULE or {}
+MODULE.name = "Derma Banking Sub-Module"
+MODULE.author = "Robert Bearson // STEAM_0:1:176123778"
+MODULE.desc = "This Module Adds A Derma Library for 1942RP"
 WB = {}
 lia.util.include("sh_printer.lua")
 lia.util.include("cl_panel_specific.lua")

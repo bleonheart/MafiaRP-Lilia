@@ -1,6 +1,6 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
-function PLUGIN:ns1SetupInventorySearch(client, target)
+function MODULE:ns1SetupInventorySearch(client, target)
     local inventory = target:getChar():getInv(client, target)
     -- Permit the player to move items from their inventory to the target's inventory.
     inventory.oldOnAuthorizeTransfer = inventory.onAuthorizeTransfer
@@ -33,7 +33,7 @@ function PLUGIN:ns1SetupInventorySearch(client, target)
     end
 end
 
-function PLUGIN:ns1RemoveInventorySearchPermissions(client, target)
+function MODULE:ns1RemoveInventorySearchPermissions(client, target)
     local inventory = target:getChar():getInv()
     inventory.onAuthorizeTransfer = inventory.oldOnAuthorizeTransfer
     inventory.oldOnAuthorizeTransfer = nil
@@ -45,7 +45,7 @@ function PLUGIN:ns1RemoveInventorySearchPermissions(client, target)
     inventory2.oldOnAuthorizeTransfer = nil
 end
 
-function PLUGIN:ns2SetupInventorySearch(client, target)
+function MODULE:ns2SetupInventorySearch(client, target)
     local function searcherCanAccess(inventory, action, context)
         if context.client == client then return true end
     end
@@ -55,7 +55,7 @@ function PLUGIN:ns2SetupInventorySearch(client, target)
     target:getChar():getInv():sync(client)
 end
 
-function PLUGIN:ns2RemoveInventorySearchPermissions(client, target)
+function MODULE:ns2RemoveInventorySearchPermissions(client, target)
     local rule = target.liaSearchAccessRule
 
     if rule then
@@ -63,7 +63,7 @@ function PLUGIN:ns2RemoveInventorySearchPermissions(client, target)
     end
 end
 
-function PLUGIN:searchPlayer(client, target)
+function MODULE:searchPlayer(client, target)
     if IsValid(target:getNetVar("searcher")) or IsValid(client.liaSearchTarget) then
         client:notifyLocalized("This person is already being searched.")
 
@@ -91,18 +91,18 @@ function PLUGIN:searchPlayer(client, target)
 end
 
 ----------------------------------------------------------------------------------------------
-function PLUGIN:CanPlayerInteractItem(client, action, item)
+function MODULE:CanPlayerInteractItem(client, action, item)
     if IsValid(client:getNetVar("searcher")) then return false end
 end
 
-function PLUGIN:stopSearching(client)
+function MODULE:stopSearching(client)
     local target = client.liaSearchTarget
 
     if IsValid(target) and target:getNetVar("searcher") == client then
         if lia.version then
-            PLUGIN:ns2RemoveInventorySearchPermissions(client, target)
+            MODULE:ns2RemoveInventorySearchPermissions(client, target)
         else
-            PLUGIN:ns1RemoveInventorySearchPermissions(client, target)
+            MODULE:ns1RemoveInventorySearchPermissions(client, target)
         end
 
         target:setNetVar("searcher", nil)
@@ -112,5 +112,5 @@ function PLUGIN:stopSearching(client)
 end
 
 netstream.Hook("searchExit", function(client)
-    PLUGIN:stopSearching(client)
+    MODULE:stopSearching(client)
 end)

@@ -1,7 +1,7 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 local PANEL = {}
 DEFINE_BASECLASS('EditablePanel')
-local BGs = PLUGIN.backgrounds
+local BGs = MODULE.backgrounds
 local logo = lia.util.getMaterial('ui/logo.png')
 local click_sound = 'weapons/grenade/tick1.wav'
 
@@ -104,15 +104,15 @@ function PANEL:Init()
     end
 
     self:CreateButton('Discord', 'Our Discord server', function()
-        gui.OpenURL(PLUGIN.discordURL)
+        gui.OpenURL(MODULE.discordURL)
     end)
 
     self:CreateButton('Forums', 'Our website', function()
-        gui.OpenURL(PLUGIN.websiteURL)
+        gui.OpenURL(MODULE.websiteURL)
     end)
 
     self:CreateButton('Content Pack', 'Our Content', function()
-        gui.OpenURL(PLUGIN.contentURL)
+        gui.OpenURL(MODULE.contentURL)
     end)    
 
     self:CreateButton('Exit', 'Disconnect from server', function(me)

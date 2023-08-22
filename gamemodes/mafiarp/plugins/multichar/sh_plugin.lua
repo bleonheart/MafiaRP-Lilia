@@ -1,10 +1,10 @@
-PLUGIN.name = "Multiple Characters"
-PLUGIN.author = "Cheesenot"
-PLUGIN.desc = "Allows players to have multiple characters."
-liaMultiChar = PLUGIN
+MODULE.name = "Multiple Characters"
+MODULE.author = "Cheesenot"
+MODULE.desc = "Allows players to have multiple characters."
+liaMultiChar = MODULE
 
 if SERVER then
-    function PLUGIN:syncCharList(client)
+    function MODULE:syncCharList(client)
         if not client.liaCharList then return end
         net.Start("liaCharList")
         net.WriteUInt(#client.liaCharList, 32)
@@ -16,7 +16,7 @@ if SERVER then
         net.Send(client)
     end
 
-    function PLUGIN:CanPlayerCreateCharacter(client)
+    function MODULE:CanPlayerCreateCharacter(client)
         local count = #client.liaCharList
         local maxChars = hook.Run("GetMaxPlayerCharacter", client) or lia.config.get("maxChars", 5)
         if count >= maxChars then return false end
@@ -25,7 +25,7 @@ else
     --- Requests to change to the character corresponding to the ID.
     -- @param id A numeric character ID
     -- @return A promise that resolves after the character has been chosen
-    function PLUGIN:chooseCharacter(id)
+    function MODULE:chooseCharacter(id)
         assert(isnumber(id), "id must be a number")
         local d = deferred.new()
 
@@ -50,7 +50,7 @@ else
     --- Requests a character to be created with the given data.
     -- @param data A table with character variable names as keys and values
     -- @return A promise that is resolves to the created character's ID
-    function PLUGIN:createCharacter(data)
+    function MODULE:createCharacter(data)
         assert(istable(data), "data must be a table")
         local d = deferred.new()
         -- Quick client-side validation before sending.
@@ -97,7 +97,7 @@ else
 
     --- Requests for a character to be deleted
     -- @param id The numeric ID of the desired character
-    function PLUGIN:deleteCharacter(id)
+    function MODULE:deleteCharacter(id)
         assert(isnumber(id), "id must be a number")
         net.Start("liaCharDelete")
         net.WriteUInt(id, 32)

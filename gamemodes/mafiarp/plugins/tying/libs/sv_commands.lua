@@ -1,4 +1,4 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
 ------------------------------------------------------------------------------------------------------------------------
 lia.command.add("allowcarentry", {
@@ -269,7 +269,7 @@ lia.command.add("charsearch", {
                     client:DoAnimationEvent(ACT_GMOD_GESTURE_ITEM_PLACE)
 
                     timer.Simple(2, function()
-                        PLUGIN:searchPlayer(client, target)
+                        MODULE:searchPlayer(client, target)
                         client:ConCommand("say /me reaches into tied persons pockets.")
                         client:EmitSound("npc/combine_soldier/gear4.wav", 100, 100)
                     end)
@@ -302,7 +302,7 @@ lia.command.add("admincharsearch", {
         local target = lia.command.findPlayer(client, arguments[1])
 
         if IsValid(target) and target:IsPlayer() then
-            PLUGIN:searchPlayer(client, target)
+            MODULE:searchPlayer(client, target)
         end
     end
 })

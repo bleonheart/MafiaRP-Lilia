@@ -1,6 +1,6 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
-function PLUGIN:PostPlayerLoadout(ply)
+function MODULE:PostPlayerLoadout(ply)
     local uniqueID = ply:GetUserGroup()
 
     if UserGroups.StaffRanks[uniqueID] and ply:Team() == FACTION_STAFF then

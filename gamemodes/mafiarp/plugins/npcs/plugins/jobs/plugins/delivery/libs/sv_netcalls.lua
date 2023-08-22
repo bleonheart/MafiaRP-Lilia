@@ -1,4 +1,4 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
 net.Receive("delivery_job", function(len, ply)
     if ply.DeliveryJobCD and ply.DeliveryJobCD > SysTime() then
@@ -106,7 +106,7 @@ net.Receive("delivery_start", function(length, ply)
     end
 
     local place = net.ReadString()
-    if not PLUGIN.DeliveryNPCLocations[place] then return end
+    if not MODULE.DeliveryNPCLocations[place] then return end
     ply.NextNewDelivery = SysTime() + 205
     local crate = ents.Create("delivery_crate")
     crate.CrateOwner = ply
@@ -127,7 +127,7 @@ net.Receive("delivery_start", function(length, ply)
     net.Start("delivery_setwaypoint")
     net.WriteBool(true)
     net.WriteString(place)
-    net.WriteVector(PLUGIN.DeliveryNPCLocations[place].Position)
+    net.WriteVector(MODULE.DeliveryNPCLocations[place].Position)
     net.Send(ply)
 end)
 

@@ -1,6 +1,6 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 
-function PLUGIN:GetTrace(ply)
+function MODULE:GetTrace(ply)
     local tr = util.TraceLine({
         start = ply:EyePos(),
         endpos = ply:EyePos() + (ply:GetAimVector() * 100),

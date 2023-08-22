@@ -1,4 +1,4 @@
-local PLUGIN = PLUGIN
+local MODULE = MODULE
 local function getDarkPanel()
     local dark = vgui.Create("DPanel")
     dark:SetSize(ScrW(), ScrH())
@@ -16,7 +16,7 @@ function QuickBackground(time, callback)
     local dark = getDarkPanel()
     dark:SetAlpha(0)
     dark:AlphaTo(255, time/2, 0, function()
-        PLUGIN.backCam = true
+        MODULE.backCam = true
         dark:AlphaTo(0, time/2, 0, function()
             dark:Remove()
             if callback then callback() end
@@ -24,7 +24,7 @@ function QuickBackground(time, callback)
     end)
 
     hook.Add("CalcView", "Camerabackground", function(ply, pos, ang, fov)
-        if not PLUGIN.backCam then return end
+        if not MODULE.backCam then return end
         local view = {}
         view.origin = ply:GetPos() + Vector(0,0,300)
         view.angles = ang + Angle(0,45,0)
@@ -42,7 +42,7 @@ function RemoveBackground(time, callback)
     dark:SetAlpha(0)
     dark:AlphaTo(255, time/2, 0, function()
         hook.Remove("CalcView", "Camerabackground")
-        PLUGIN.backCam = false
+        MODULE.backCam = false
         dark:AlphaTo(0, time/2, 0, function()
             dark:Remove()
             if callback then callback() end

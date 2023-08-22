@@ -15,7 +15,7 @@ if CLIENT then
     end)
 end
 
-SWEP.Author = "Leonheart#7476"
+SWEP.Author = "STEAM_0:1:176123778"
 SWEP.PrintName = "Admin Stick"
 SWEP.Purpose = "Instructions: Press R when looking at someone to select them \nPress Shift R to select yourself \nLeft click to open menu \nRight click with selection to freeze."
 SWEP.ViewModelFOV = 100

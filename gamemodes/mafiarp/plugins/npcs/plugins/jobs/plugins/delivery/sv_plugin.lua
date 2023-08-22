@@ -5,7 +5,7 @@ for k, v in pairs(netcalls) do
 end
 
 -------------------------------------------------------------------------------------------
-function PLUGIN:SaveData()
+function MODULE:SaveData()
     local data = {}
 
     for k, v in ipairs(ents.FindByClass("npcdelivery")) do
@@ -19,7 +19,7 @@ function PLUGIN:SaveData()
 end
 
 -------------------------------------------------------------------------------------------
-function PLUGIN:LoadData()
+function MODULE:LoadData()
     for k, v in ipairs(self:getData() or {}) do
         local entity = ents.Create("npcdelivery")
         entity:SetPos(v.pos)

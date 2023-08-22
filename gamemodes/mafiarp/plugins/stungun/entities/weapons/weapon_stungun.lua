@@ -1,7 +1,7 @@
 if CLIENT then
     SWEP.PrintName = "NS - StunGun"
-    SWEP.Author = "Leonheart#7476"
-    SWEP.Instructions = "Leonheart#7476"
+    SWEP.Author = "STEAM_0:1:176123778"
+    SWEP.Instructions = "STEAM_0:1:176123778"
     SWEP.Slot = 2
     SWEP.SlotPos = 1
 end

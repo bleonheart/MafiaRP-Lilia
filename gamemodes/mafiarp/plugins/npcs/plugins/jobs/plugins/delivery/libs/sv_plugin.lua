@@ -1,4 +1,4 @@
-function PLUGIN:PlayerEnteredVehicle(ply, veh, role)
+function MODULE:PlayerEnteredVehicle(ply, veh, role)
     if IsValid(veh.vehiclebase) then
         veh = veh.vehiclebase
     end
@@ -8,7 +8,7 @@ function PLUGIN:PlayerEnteredVehicle(ply, veh, role)
     end
 end
 
-function PLUGIN:PlayerLeaveVehicle(ply, veh)
+function MODULE:PlayerLeaveVehicle(ply, veh)
     if IsValid(veh.vehiclebase) then
         veh = veh.vehiclebase
     end
@@ -18,7 +18,7 @@ function PLUGIN:PlayerLeaveVehicle(ply, veh)
     end
 end
 
-function PLUGIN:PlayerDisconnected(ply)
+function MODULE:PlayerDisconnected(ply)
     local ent = ply.deliveryTruckEnt
 
     if IsValid(ent) then

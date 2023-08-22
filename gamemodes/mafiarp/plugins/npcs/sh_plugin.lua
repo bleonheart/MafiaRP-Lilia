@@ -1,7 +1,7 @@
 talkablenpcs = talkablenpcs or {}
-PLUGIN.name = "Talkable NPCs"
-PLUGIN.desc = "A Talkable NPCs Framework"
-PLUGIN.author = "Leonheart#7476"
+MODULE.name = "Talkable NPCs"
+MODULE.desc = "A Talkable NPCs Framework"
+MODULE.author = "STEAM_0:1:176123778"
 ------------------------------------------------------------------------------------------
 lia.util.include("cl_dialog.lua")
 ------------------------------------------------------------------------------------------

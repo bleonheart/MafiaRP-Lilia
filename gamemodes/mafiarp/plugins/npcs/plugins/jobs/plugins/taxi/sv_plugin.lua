@@ -5,7 +5,7 @@ for k, v in pairs(netcalls) do
 end
 
 -------------------------------------------------------------------------------------------
-function PLUGIN:PlayerDisconnected(ply)
+function MODULE:PlayerDisconnected(ply)
     local ent = ply.taxiEnt
 
     if IsValid(ent) then
@@ -20,7 +20,7 @@ function PLUGIN:PlayerDisconnected(ply)
 end
 
 -------------------------------------------------------------------------------------------
-function PLUGIN:SaveData()
+function MODULE:SaveData()
     local data = {}
 
     for k, v in ipairs(ents.FindByClass("npctaxi")) do
@@ -34,7 +34,7 @@ function PLUGIN:SaveData()
 end
 
 -------------------------------------------------------------------------------------------
-function PLUGIN:LoadData()
+function MODULE:LoadData()
     for k, v in ipairs(self:getData() or {}) do
         local entity = ents.Create("npctaxi")
         entity:SetPos(v.pos)

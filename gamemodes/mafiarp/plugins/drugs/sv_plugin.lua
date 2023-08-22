@@ -1,4 +1,4 @@
-function PLUGIN:EntityTakeDamage(client, dmginfo)
+function MODULE:EntityTakeDamage(client, dmginfo)
     local attacker = dmginfo:GetAttacker()
 
     if IsValid(attacker) and attacker:IsPlayer() then
