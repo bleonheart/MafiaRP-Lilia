@@ -1,3 +1,5 @@
+local MODULE = MODULE
+
 if CLIENT then
     SWEP.PrintName = "NS - StunGun"
     SWEP.Author = "STEAM_0:1:176123778"
@@ -45,15 +47,15 @@ end
 
 function SWEP:PrimaryAttack()
     local client = self:GetOwner()
-    local Target = client:GetEyeTrace().Entity
+    local target = client:GetEyeTrace().Entity
     if client:IsNPC() then return end
     local curTime = CurTime()
     if curTime < self.LastFired + 5 then return end -- check if the delay time has passed
     local maxDistance = 400 -- set the maximum distance for the check
-    local distance = client:GetPos():Distance(Target:GetPos()) -- calculate the distance between the player and the target
+    local distance = client:GetPos():Distance(target:GetPos()) -- calculate the distance between the player and the target
 
-    if IsValid(Target) and Target:IsPlayer() and Target:Team() == FACTION_STAFF then
-        Target:notify("You were just attempted to be stunned by " .. client:Name() .. ".")
+    if IsValid(target) and target:IsPlayer() and target:Team() == FACTION_STAFF then
+        target:notify("You were just attempted to be stunned by " .. client:Name() .. ".")
         client:notify("You can't tie a staff member!")
 
         return
@@ -62,22 +64,19 @@ function SWEP:PrimaryAttack()
     -- check if the distance is greater than the maximum distance
     if distance > maxDistance then
         self.LastFired = curTime
-        client:ChatPrint("Target is too far away!")
+        client:ChatPrint("target is too far away!")
 
         return
     end
 
-    if Target:IsPlayer() and Target:getChar() then
+    if target:IsPlayer() and target:getChar() then
         self:SendWeaponAnim(ACT_VM_PRIMARYATTACK)
         self:EmitSound(self.Primary.Sound)
         self.LastFired = curTime
         self:ShootBullet(0, 1, self.Primary.Cone)
 
-        if CLIENT then
-            net.Start("tase_character")
-            net.WriteEntity(client)
-            net.WriteEntity(Target)
-            net.SendToServer()
+        if SERVER then
+            MODULE:TasePlayer(ply,target)
         end
     else
         self.LastFired = curTime

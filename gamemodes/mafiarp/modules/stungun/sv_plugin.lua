@@ -1,8 +1,10 @@
 local playerMeta = FindMetaTable("Player")
-util.AddNetworkString("tase_character")
 
-net.Receive("tase_character", function()
-    local ply = net.ReadEntity()
+function MODULE:TasePlayer(ply, target)
+    if not ply:IsPlayer() then return end
+    if not IsValid(ply:GetActiveWeapon()) then return end 
+    if not ply:GetActiveWeapon():GetClass() ~= "weapon_stungun" then return end
+
     local target = net.ReadEntity()
     target:Freeze(true)
     target:SetNoDraw(true)
@@ -20,7 +22,7 @@ net.Receive("tase_character", function()
             target:Freeze(false)
         end)
     end)
-end)
+end
 
 function playerMeta:setRagdolledTase(state, time, nm)
     getUpGrace = 0
