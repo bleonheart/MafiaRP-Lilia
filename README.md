@@ -2,14 +2,6 @@
  
 MafiaRP is a roleplay schema for [Lilia 1.0](https://github.com/bleonheart/Lilia). Its aim is to provide a stable MafiaRP schema to start your server creation with.
 
-## Getting Started
+# Support
 
-To get started, you should look at the core folder, located inside of the [Schema Folder](https://github.com/bleonheart/MafiaRP-Lilia/tree/main/gamemodes/mafiarp/schema) and configure the schema using your own settings. After such, you can start configuring the modules to your liking.
-
-If you have questions regarding the schema or want to integrate with the community, you can join our Discord server at [Discord](https://discord.gg/RTcVq92HsH).
-
-## Content
-
-For the StunGun:
-
-https://steamcommunity.com/sharedfiles/filedetails/?id=428174344
+If you have any questions or need assistance with the schema, or if you would like to engage with the community, feel free to join our [Discord Server](https://discord.gg/52MSnh39vw). You can find us at this Discord invite link. We are ready to help and support you in any way we can.
