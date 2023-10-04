@@ -1,4 +1,4 @@
-# MafiaRP-Lilia
+# Lilia MafiaRP
  
 MafiaRP is a roleplay schema for [Lilia 2.0](https://github.com/bleonheart/Lilia). Its aim is to provide a stable MafiaRP schema to start your server creation with.
 
