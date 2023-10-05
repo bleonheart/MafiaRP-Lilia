@@ -1,5 +1,4 @@
 local MODULE = MODULE
-
 if CLIENT then
     SWEP.PrintName = "NS - StunGun"
     SWEP.Author = "STEAM_0:1:176123778"
@@ -38,7 +37,6 @@ SWEP.IronSightsAng = Vector(0.9, 0, 0)
 SWEP.ViewModelFlip = false
 SWEP.ViewModelFOV = 65
 SWEP.LastFired = 0 -- add this variable at the top of the function
-
 function SWEP:Initialize()
     if SERVER then
         self.LastFired = 0
@@ -53,7 +51,6 @@ function SWEP:PrimaryAttack()
     if curTime < self.LastFired + 5 then return end -- check if the delay time has passed
     local maxDistance = 400 -- set the maximum distance for the check
     local distance = client:GetPos():Distance(target:GetPos()) -- calculate the distance between the player and the target
-
     if IsValid(target) and target:IsPlayer() and target:Team() == FACTION_STAFF then
         target:notify("You were just attempted to be stunned by " .. client:Name() .. ".")
         client:notify("You can't tie a staff member!")
@@ -74,9 +71,8 @@ function SWEP:PrimaryAttack()
         self:EmitSound(self.Primary.Sound)
         self.LastFired = curTime
         self:ShootBullet(0, 1, self.Primary.Cone)
-
         if SERVER then
-            MODULE:TasePlayer(ply,target)
+            MODULE:TasePlayer(ply, target)
         end
     else
         self.LastFired = curTime
@@ -88,7 +84,6 @@ function SWEP:GetViewModelPosition(pos, ang)
     if not self.IronSightsPos then return pos, ang end
     pos = pos + ang:Forward() * -5
     local Offset = self.IronSightsPos
-
     if self.IronSightsAng then
         ang = ang * 1
         ang:RotateAroundAxis(ang:Right(), self.IronSightsAng.x)
@@ -108,7 +103,6 @@ end
 
 if CLIENT then
     local LASER = Material('cable/redlaser')
-
     local function DrawLaser()
         for i, ply in pairs(player.GetAll()) do
             if not ply:Alive() or LocalPlayer() == ply or ply:GetActiveWeapon() == NULL or ply:GetActiveWeapon():GetClass() ~= 'weapon_stungun' then continue end
@@ -119,7 +113,6 @@ if CLIENT then
             if not IsValid(m) then return end
             local pos = m:GetTranslation() + ply:EyeAngles():Forward() * 8 + Vector(0, 0, 0.1) + ply:EyeAngles():Right() * -1
             local hitpos = ply:GetShootPos() + ply:EyeAngles():Forward() * SWEPConfig.MaxDist
-
             if ply:GetEyeTrace().HitPos:Length() <= SWEPConfig.MaxDist then
                 hitpos = ply:GetEyeTrace().HitPos
             end
@@ -128,9 +121,13 @@ if CLIENT then
         end
     end
 
-    hook.Add('PostDrawOpaqueRenderables', 'PlyMustSeeLaser', function()
-        DrawLaser()
-    end)
+    hook.Add(
+        'PostDrawOpaqueRenderables',
+        'PlyMustSeeLaser',
+        function()
+            DrawLaser()
+        end
+    )
 
     function SWEP:ViewModelDrawn()
         local vm = self.Owner:GetViewModel()
@@ -141,7 +138,6 @@ if CLIENT then
         pos, ang = Vector(0, 0, 0), Angle(0, 0, 0)
         local m = vm:GetBoneMatrix(bone)
         local m2 = vm:GetBoneMatrix(bones)
-
         if m then
             pos, ang = m:GetTranslation(), m:GetAngles()
             pos2, ang2 = m2:GetTranslation(), m2:GetAngles()

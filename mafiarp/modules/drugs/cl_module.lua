@@ -1,10 +1,9 @@
+-------------------------------------------------------------------------------------------
 function MODULE:Think()
     local client = LocalPlayer()
-
     if client:getChar() and (client.nextDrugCheck or 0) < CurTime() then
         client.nextDrugCheck = CurTime() + 5
         local glare = LocalPlayer():getNetVar("glare")
-
         if glare then
             self.glare = glare
         else
@@ -15,6 +14,7 @@ function MODULE:Think()
     end
 end
 
+-------------------------------------------------------------------------------------------
 function MODULE:RenderScreenspaceEffects()
     if self.glare then
         local colorMod = {}
@@ -30,3 +30,4 @@ function MODULE:RenderScreenspaceEffects()
         DrawColorModify(colorMod)
     end
 end
+-------------------------------------------------------------------------------------------
