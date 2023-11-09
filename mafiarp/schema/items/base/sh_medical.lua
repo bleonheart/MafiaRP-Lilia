@@ -1,15 +1,13 @@
-ITEM.name = "Aid Items"
+﻿ITEM.name = "Aid Items"
 ITEM.desc = "Heals you bruh."
 ITEM.model = "models/weapons/w_package.mdl"
 ITEM.width = 1
 ITEM.height = 1
 ITEM.heal = 0
-
 ITEM.functions.use = {
     sound = "items/medshot4.wav",
     onRun = function(item)
         local client = item.player
-
         if (client:Health() + item.heal) >= client:GetMaxHealth() then
             client:SetHealth(client:GetMaxHealth())
             client:notify("Your Health was set to max due to the value surpassing your Health limit.")
@@ -24,10 +22,8 @@ ITEM.functions.target = {
     onRun = function(item)
         local client = item.player
         local target = client:GetEyeTrace().Entity
-
         if not (target:Alive() or IsValid(target) and target:IsPlayer()) then
             client:notify("Target not valid! You must be looking at it!")
-
             return
         else
             if (target:Health() + item.heal) >= target:GetMaxHealth() then

@@ -1,7 +1,1 @@
-"mafiarp"
-{
-	"base"		"lilia"
-	"title"		"mafiarp"
-	"author"	"Leonheart"
-	"menusystem" "1"
-}
+﻿goto"mafiarp"{"base"}"lilia""title""mafiarp""author""Leonheart""menusystem""1"

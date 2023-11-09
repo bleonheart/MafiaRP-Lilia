@@ -1,4 +1,4 @@
--------------------------------------------------------------------------------------------
+﻿-------------------------------------------------------------------------------------------
 ITEM.name = "Fancy Drug Base"
 -------------------------------------------------------------------------------------------
 ITEM.desc = " "
@@ -39,10 +39,7 @@ ITEM.functions._use = {
                 print(client.drug)
             end
 
-            if item.hploss then
-                client:TakeDamage(item.hploss, client, client)
-            end
-
+            if item.hploss then client:TakeDamage(item.hploss, client, client) end
             if item.speed then
                 client:SetWalkSpeed(lia.config.get("walkSpeed") * item.speed)
                 client:SetRunSpeed(lia.config.get("runSpeed") * item.speed)
