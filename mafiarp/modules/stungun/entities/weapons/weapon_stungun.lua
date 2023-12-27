@@ -1,46 +1,82 @@
-﻿local MODULE = MODULE
+﻿--------------------------------------------------------------------------------------------------------
+local MODULE = MODULE
+--------------------------------------------------------------------------------------------------------
 if CLIENT then
-    SWEP.PrintName = "NS - StunGun"
+    SWEP.PrintName = "StunGun"
     SWEP.Author = "STEAM_0:1:176123778"
     SWEP.Instructions = "STEAM_0:1:176123778"
     SWEP.Slot = 2
     SWEP.SlotPos = 1
 end
 
+--------------------------------------------------------------------------------------------------------
 SWEP.UseHands = true
+--------------------------------------------------------------------------------------------------------
 SWEP.Spawnable = true
+--------------------------------------------------------------------------------------------------------
 SWEP.AdminSpawnable = true
+--------------------------------------------------------------------------------------------------------
 SWEP.Category = "StunGun"
+--------------------------------------------------------------------------------------------------------
 SWEP.ViewModel = "models/weapons/cg_ocrp2/v_taser.mdl"
+--------------------------------------------------------------------------------------------------------
 SWEP.WorldModel = "models/weapons/cg_ocrp2/w_taser.mdl"
+--------------------------------------------------------------------------------------------------------
 SWEP.HoldType = "pistol"
+--------------------------------------------------------------------------------------------------------
 SWEP.Weight = 5
+--------------------------------------------------------------------------------------------------------
 SWEP.AutoSwitchTo = false
+--------------------------------------------------------------------------------------------------------
 SWEP.AutoSwitchFrom = false
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.Sound = Sound("weapons/clipempty_rifle.wav")
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.Recoil = 0.1
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.Damage = 0
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.NumShots = 1
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.Cone = 0.5
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.ClipSize = 1
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.Delay = 0.06
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.DefaultClip = 55
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.Automatic = true
+--------------------------------------------------------------------------------------------------------
 SWEP.Primary.Ammo = "pistol"
+--------------------------------------------------------------------------------------------------------
 SWEP.DrawCrosshair = false
+--------------------------------------------------------------------------------------------------------
 SWEP.Secondary.ClipSize = -1
+--------------------------------------------------------------------------------------------------------
 SWEP.Secondary.DefaultClip = -1
+--------------------------------------------------------------------------------------------------------
 SWEP.Secondary.Automatic = false
+--------------------------------------------------------------------------------------------------------
 SWEP.Secondary.Ammo = "none"
+--------------------------------------------------------------------------------------------------------
 SWEP.IronSightsPos = Vector(-6, 2.2, -2)
+--------------------------------------------------------------------------------------------------------
 SWEP.IronSightsAng = Vector(0.9, 0, 0)
+--------------------------------------------------------------------------------------------------------
 SWEP.ViewModelFlip = false
+--------------------------------------------------------------------------------------------------------
 SWEP.ViewModelFOV = 65
-SWEP.LastFired = 0 -- add this variable at the top of the function
+--------------------------------------------------------------------------------------------------------
+SWEP.LastFired = 0
+--------------------------------------------------------------------------------------------------------
 function SWEP:Initialize()
-    if SERVER then self.LastFired = 0 end
+    if SERVER then
+        self.LastFired = 0
+    end
 end
 
+--------------------------------------------------------------------------------------------------------
 function SWEP:PrimaryAttack()
     local client = self:GetOwner()
     local target = client:GetEyeTrace().Entity
@@ -52,6 +88,7 @@ function SWEP:PrimaryAttack()
     if IsValid(target) and target:IsPlayer() and target:Team() == FACTION_STAFF then
         target:notify("You were just attempted to be stunned by " .. client:Name() .. ".")
         client:notify("You can't tie a staff member!")
+
         return
     end
 
@@ -59,6 +96,7 @@ function SWEP:PrimaryAttack()
     if distance > maxDistance then
         self.LastFired = curTime
         client:ChatPrint("target is too far away!")
+
         return
     end
 
@@ -67,13 +105,16 @@ function SWEP:PrimaryAttack()
         self:EmitSound(self.Primary.Sound)
         self.LastFired = curTime
         self:ShootBullet(0, 1, self.Primary.Cone)
-        if SERVER then MODULE:TasePlayer(ply, target) end
+        if SERVER then
+            MODULE:TasePlayer(ply, target)
+        end
     else
         self.LastFired = curTime
         client:ChatPrint("Invalid Target/Miss Shot!")
     end
 end
 
+--------------------------------------------------------------------------------------------------------
 function SWEP:GetViewModelPosition(pos, ang)
     if not self.IronSightsPos then return pos, ang end
     pos = pos + ang:Forward() * -5
@@ -91,9 +132,11 @@ function SWEP:GetViewModelPosition(pos, ang)
     pos = pos + Offset.x * Right
     pos = pos + Offset.y * Forward
     pos = pos + Offset.z * Up
+
     return pos, ang
 end
 
+--------------------------------------------------------------------------------------------------------
 if CLIENT then
     local LASER = Material('cable/redlaser')
     local function DrawLaser()
@@ -106,12 +149,22 @@ if CLIENT then
             if not IsValid(m) then return end
             local pos = m:GetTranslation() + ply:EyeAngles():Forward() * 8 + Vector(0, 0, 0.1) + ply:EyeAngles():Right() * -1
             local hitpos = ply:GetShootPos() + ply:EyeAngles():Forward() * SWEPConfig.MaxDist
-            if ply:GetEyeTrace().HitPos:Length() <= SWEPConfig.MaxDist then hitpos = ply:GetEyeTrace().HitPos end
+            if ply:GetEyeTrace().HitPos:Length() <= SWEPConfig.MaxDist then
+                hitpos = ply:GetEyeTrace().HitPos
+            end
+
             render.DrawBeam(pos, hitpos, 2, 0, 12.5, Color(255, 0, 0, 255))
         end
     end
 
-    hook.Add('PostDrawOpaqueRenderables', 'PlyMustSeeLaser', function() DrawLaser() end)
+    hook.Add(
+        'PostDrawOpaqueRenderables',
+        'PlyMustSeeLaser',
+        function()
+            DrawLaser()
+        end
+    )
+
     function SWEP:ViewModelDrawn()
         local vm = self.Owner:GetViewModel()
         if not IsValid(vm) then return end
@@ -144,3 +197,4 @@ if CLIENT then
         draw.RoundedBox(0, 1, 0, 4, math.Clamp(i, 0, 10), Color(255 - power, 10 + power * 2, 25, 255))
     end
 end
+--------------------------------------------------------------------------------------------------------

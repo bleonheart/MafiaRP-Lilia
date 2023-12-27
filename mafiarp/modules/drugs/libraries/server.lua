@@ -5,7 +5,9 @@ function MODULE:EntityTakeDamage(client, dmginfo)
         local attackDrug = attacker.drug
         if attackDrug then
             for k, v in pairs(attackDrug) do
-                if v[1] == "attack" then dmginfo:ScaleDamage(1 + v[2]) end
+                if v[1] == "attack" then
+                    dmginfo:ScaleDamage(1 + v[2])
+                end
             end
         end
     end
@@ -14,7 +16,9 @@ function MODULE:EntityTakeDamage(client, dmginfo)
         local drug = client.drug
         if drug then
             for k, v in pairs(drug) do
-                if v[1] == "resist" then dmginfo:ScaleDamage(1 - v[2]) end
+                if v[1] == "resist" then
+                    dmginfo:ScaleDamage(1 - v[2])
+                end
             end
         end
     end
