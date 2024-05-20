@@ -1,6 +1,5 @@
 ﻿--- Configuration for Card Deck item.
 -- @items CardDeck
-
 --- This table defines the fields of the Card Deck item.
 -- @table Configurations
 -- @realm shared
