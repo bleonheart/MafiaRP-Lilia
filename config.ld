@@ -1,10 +1,10 @@
 file = {
-	"skeleton",
+	"mafiarp",
 }
 
 dir = "docs/html"
-project = "Skeleton Schema Documentation"
-title = "Skeleton Schema Documentation"
+project = "MafiaRP Schema Documentation"
+title = "MafiaRP Schema Documentation"
 no_space_before_args = true
 style = "docs/css"
 template = "docs/templates"
@@ -40,7 +40,6 @@ custom_display_name_handler = function(item, default_handler)
 
 	return default_handler(item)
 end
-
 
 new_type("hooks", "Hooks", true)
 new_type("items", "Items", true)
