@@ -1,10 +1,10 @@
---------------------------------------------------------------------------------------------------------
+
 local MODULE = MODULE
---------------------------------------------------------------------------------------------------------
+
 local find = {
     ["radio"] = true,
 }
---------------------------------------------------------------------------------------------------------
+
 function MODULE:EndChatter(listener)
     timer.Simple(1, function()
         if not listener:IsValid() or not listener:Alive() or hook.Run("ShouldRadioBeep", listener) == false then return false end
@@ -12,7 +12,7 @@ function MODULE:EndChatter(listener)
     end)
 end
 
---------------------------------------------------------------------------------------------------------
+
 lia.chat.register("radio", {
     format = "%s says in radio: \"%s\"",
     font = "liaRadioFont",
@@ -106,4 +106,4 @@ lia.chat.register("radio", {
     end,
     prefix = {"/r", "/radio"},
 })
---------------------------------------------------------------------------------------------------------
+

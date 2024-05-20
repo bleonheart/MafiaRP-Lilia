@@ -1,6 +1,6 @@
-﻿-------------------------------------------------------------------------------------------
+﻿
 local playerMeta = FindMetaTable("Player")
--------------------------------------------------------------------------------------------
+
 function playerMeta:setRagdolledTase(state, time, nm)
     getUpGrace = 0
     if state then
@@ -97,7 +97,7 @@ function playerMeta:setRagdolledTase(state, time, nm)
                             entity.liaPausing = false
                         end
 
-                        time = time - 0.33
+                        time = time  0.33
                         if time <= 0 then entity:Remove() end
                     else
                         timer.Remove(uniqueID)
@@ -113,4 +113,4 @@ function playerMeta:setRagdolledTase(state, time, nm)
         hook.Run("OnCharFallover", self, entity, false)
     end
 end
--------------------------------------------------------------------------------------------
+

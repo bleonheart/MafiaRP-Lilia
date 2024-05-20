@@ -1,6 +1,6 @@
-----------------------------------------------------------------------------------------------
+
 local MODULE = MODULE
-----------------------------------------------------------------------------------------------
+
 PIM:AddOption("Request Search", {
     runServer = true,
     shouldShow = function(client, target) return not target.SearchRequested and not client.SearchRequested and not IsBeingSearched(target) end,
@@ -14,7 +14,7 @@ PIM:AddOption("Request Search", {
     end
 })
 
-----------------------------------------------------------------------------------------------
+
 PIM:AddOption("Search", {
     runServer = true,
     shouldShow = function(_, target) return IsHandcuffed(target) and not IsBeingSearched(target) end,
@@ -23,4 +23,3 @@ PIM:AddOption("Search", {
         MODULE:searchPlayer(client, target)
     end
 })
-----------------------------------------------------------------------------------------------
