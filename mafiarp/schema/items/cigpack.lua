@@ -1,4 +1,16 @@
-﻿ITEM.name = "Cigarette Pack"
+﻿--- Configuration for Cigarette Pack item.
+-- @items CigarettePack
+
+--- This table defines the fields of the cigarette pack item.
+-- @table Configurations
+-- @realm shared
+-- @field name The name of the item | **string**
+-- @field desc The description of the item | **string**
+-- @field model The model of the item | **string**
+-- @field price The price of the item | **number**
+-- @field PackNum The number of cigarettes in the pack | **number**
+
+ITEM.name = "Cigarette Pack"
 ITEM.desc = "A pack of cigarettes."
 ITEM.model = "models/Items/BoxSRounds.mdl"
 ITEM.price = 50

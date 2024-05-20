@@ -1,7 +1,6 @@
-﻿"mafiarp"
+"mafiarp"
 {
 	"base"		"lilia"
-	"title"		"mafiarp"
+	"title"		"MafiaRP"
 	"author"	"Leonheart"
-	"category"	"rp"
 }

@@ -1,7 +1,15 @@
-﻿ITEM.name = "Cigarette"
+﻿--- Configuration for Cigarette item.
+-- @items Cigarette
+
+--- This table defines the fields of the cigarette item.
+-- @table Configurations
+-- @realm shared
+-- @field name The name of the item | **string**
+-- @field desc The description of the item | **string**
+-- @field model The model of the item | **string**
+ITEM.name = "Cigarette"
 ITEM.desc = "A Cigarette."
 ITEM.model = "models/Items/BoxSRounds.mdl"
-ITEM.uniqueID = "weapon_ciga"
 ITEM.functions.TakeOutCig = {
     name = "Light Up & Smoke",
     onRun = function(item)
