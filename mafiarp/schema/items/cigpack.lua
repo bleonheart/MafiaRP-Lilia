@@ -1,5 +1,6 @@
 ﻿--- Configuration for Cigarette Pack item.
 -- @items CigarettePack
+
 --- This table defines the fields of the cigarette pack item.
 -- @table Configurations
 -- @realm shared
