@@ -46,7 +46,7 @@ PIM:AddOption("Remove Cuffed Passengers", {
             if v:IsPlayer() and v:InVehicle() and IsHandcuffed(v) then return true end
         end
     end,
-    onRun = function(client, target)
+    onRun = function(_, target)
         if not SERVER then return end
         for i = 2, #target.pSeat do
             local driver = target.pSeat[i]:GetDriver()

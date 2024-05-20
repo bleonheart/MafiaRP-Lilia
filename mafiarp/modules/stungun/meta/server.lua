@@ -22,7 +22,7 @@ function playerMeta:setRagdolledTase(state, time, nm)
 
                 if IsValid(self) and not entity.liaIgnoreDelete then
                     if entity.liaWeapons then
-                        for k, v in ipairs(entity.liaWeapons) do
+                        for _, v in ipairs(entity.liaWeapons) do
                             self:Give(v)
                             if entity.liaAmmo then
                                 for k2, v2 in ipairs(entity.liaAmmo) do
@@ -31,7 +31,7 @@ function playerMeta:setRagdolledTase(state, time, nm)
                             end
                         end
 
-                        for k, v in ipairs(self:GetWeapons()) do
+                        for _, v in ipairs(self:GetWeapons()) do
                             v:SetClip1(0)
                         end
                     end
@@ -40,7 +40,7 @@ function playerMeta:setRagdolledTase(state, time, nm)
                         entity:DropToFloor()
                         self:SetPos(entity:GetPos() + Vector(0, 0, 16))
                         local positions = lia.util.findEmptySpace(self, {entity, self})
-                        for k, v in ipairs(positions) do
+                        for _, v in ipairs(positions) do
                             self:SetPos(v)
                             if not self:isStuck() then return end
                         end
@@ -61,7 +61,7 @@ function playerMeta:setRagdolledTase(state, time, nm)
             self:setAction("@wakingUp", nil, nil, entity.liaStart, entity.liaFinish)
         end
 
-        for k, v in ipairs(self:GetWeapons()) do
+        for _, v in ipairs(self:GetWeapons()) do
             entity.liaWeapons[#entity.liaWeapons + 1] = v:GetClass()
             local clip = v:Clip1()
             local reserve = self:GetAmmoCount(v:GetPrimaryAmmoType())
@@ -75,7 +75,6 @@ function playerMeta:setRagdolledTase(state, time, nm)
         self:SetNotSolid(true)
         self:SetMoveType(MOVETYPE_NONE)
         if time then
-            local time2 = time
             local uniqueID = "liaUnRagdoll" .. self:SteamID()
             timer.Create(
                 uniqueID,

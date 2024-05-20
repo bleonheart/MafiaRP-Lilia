@@ -22,7 +22,7 @@ lia.chat.register("radio", {
         local speakRange = ChatboxCore.ChatRange
         local listenerEnts = ents.FindInSphere(listener:GetPos(), speakRange)
         local listenerInv = listener:getChar():getInv()
-        local freq
+        local freq = nil
         if not CURFREQ or CURFREQ == "" or not CURCHANNEL then return false end
         if dist <= speakRange then return true end
         if listenerInv then
