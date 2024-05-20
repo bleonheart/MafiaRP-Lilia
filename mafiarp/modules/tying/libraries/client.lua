@@ -3,7 +3,7 @@ local MODULE = MODULE
 
 local scrW, scrH = ScrW(), ScrH()
 
-function MODULE:DrawCharInfo(client, character, info)
+function MODULE:DrawCharInfo(client, _, info)
     if IsHandcuffed(client) then info[#info + 1] = {"Handcuffed", Color(245, 215, 110)} end
 end
 

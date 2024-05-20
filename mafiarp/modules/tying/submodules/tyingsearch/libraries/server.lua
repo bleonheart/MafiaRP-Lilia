@@ -12,7 +12,7 @@ function MODULE:SetupInventorySearch(client, target)
 end
 
 
-function MODULE:RemoveInventorySearchPermissions(client, target)
+function MODULE:RemoveInventorySearchPermissions(_, target)
     local rule = target.liaSearchAccessRule
     if rule then target:getChar():getInv():removeAccessRule(rule) end
 end
