@@ -1,7 +1,7 @@
 ﻿
 local playerMeta = FindMetaTable("Player")
 
-function playerMeta:setRagdolledTase(state, time, nm)
+function playerMeta:setRagdolledTase(state, time)
     getUpGrace = 0
     if state then
         if IsValid(self.liaRagdoll) then self.liaRagdoll:Remove() end
