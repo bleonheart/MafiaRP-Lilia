@@ -3,6 +3,6 @@ lia.command.add("removeties", {
     privilege = "Remove Ties",
     adminOnly = true,
     syntax = "<string player>",
-    onRun = function(client, arguments) end
+    onRun = function() end
 })
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

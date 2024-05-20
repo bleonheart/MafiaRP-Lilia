@@ -1,31 +1,31 @@
 ﻿----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:PlayerBindPress(client, bind, pressed)
+function MODULE:PlayerBindPress(client, bind)
     bind = bind:lower()
     if IsHandcuffed(client) and (string.find(bind, "+speed") or string.find(bind, "gm_showhelp") or string.find(bind, "+jump") or string.find(bind, "+walk") or string.find(bind, "+use")) then return true end
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:CheckValidSit(client, trace)
+function MODULE:CheckValidSit(client)
     if IsHandcuffed(client) then return false end
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:CanDeleteChar(client, char)
+function MODULE:CanDeleteChar(client)
     if IsHandcuffed(client) then return true end
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:PlayerSwitchWeapon(client, old, new)
+function MODULE:PlayerSwitchWeapon(client)
     if IsHandcuffed(client) then return true end
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:CanExitVehicle(veh, client)
+function MODULE:CanExitVehicle(_, client)
     if IsHandcuffed(client) then return false end
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:CanPlayerUseChar(client, char)
+function MODULE:CanPlayerUseChar(client)
     if IsHandcuffed(client) then return false, "You're currently handcuffed." end
 end
 
@@ -35,27 +35,27 @@ function MODULE:PostPlayerLoadout(client)
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:ShouldWeaponBeRaised(client, weapon)
+function MODULE:ShouldWeaponBeRaised(client)
     if IsHandcuffed(client) then return false end
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:CanPlayerUseDoor(client, entity)
+function MODULE:CanPlayerUseDoor(client)
     if IsHandcuffed(client) then return false end
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:CanPlayerInteractItem(client, action, item)
+function MODULE:CanPlayerInteractItem(client)
     if IsHandcuffed(client) then return false end
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:VC_canEnterPassengerSeat(client, seat, veh)
+function MODULE:VC_canEnterPassengerSeat(client)
     return not IsHandcuffed(client)
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MODULE:CanPlayerInteractItem(client, action, item)
+function MODULE:CanPlayerInteractItem(client)
     if IsHandcuffed(client) then return false end
 end
 
@@ -95,7 +95,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function HandcuffPlayer(target)
     target:SetRunSpeed(target:GetWalkSpeed())
-    for k, v in pairs(target:getChar():getInv():getItems()) do
+    for _, v in pairs(target:getChar():getInv():getItems()) do
         if v.isWeapon and v:getData("equip") then v:setData("equip", nil) end
     end
 

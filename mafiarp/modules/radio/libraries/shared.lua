@@ -4,18 +4,6 @@ local MODULE = MODULE
 local find = {
     ["radio"] = true,
 }
-
---------------------------------------------------------------------------------------------------------
-function MODULE:OverrideItemTooltip(inv, data, item)
-    if item.uniqueID == "radio" then
-        local freq = item:getData("freq", nil)
-        if not freq then return end
-        freq = math.Round(freq, 1)
-        local enabled = item:getData("enabled", false) and "Enabled" or "Disabled"
-        return Format(lia.config.itemFormat, item.getName and item:getName() or L(item.name), "Frequency: " .. (freq or "") .. "\n" .. enabled)
-    end
-end
-
 --------------------------------------------------------------------------------------------------------
 function MODULE:EndChatter(listener)
     timer.Simple(1, function()

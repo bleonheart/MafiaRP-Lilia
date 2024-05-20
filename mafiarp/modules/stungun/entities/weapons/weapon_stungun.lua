@@ -85,7 +85,7 @@ function SWEP:PrimaryAttack()
     if curTime < self.LastFired + 5 then return end -- check if the delay time has passed
     local maxDistance = 400 -- set the maximum distance for the check
     local distance = client:GetPos():Distance(target:GetPos()) -- calculate the distance between the player and the target
-    if IsValid(target) and target:IsPlayer() and target:Team() == FACTION_STAFF then
+    if IsValid(target) and target:IsPlayer() and target:isStaffOnDuty() then
         target:notify("You were just attempted to be stunned by " .. client:Name() .. ".")
         client:notify("You can't tie a staff member!")
 
@@ -140,7 +140,7 @@ end
 if CLIENT then
     local LASER = Material('cable/redlaser')
     local function DrawLaser()
-        for i, ply in pairs(player.GetAll()) do
+        for _, ply in pairs(player.GetAll()) do
             if not ply:Alive() or LocalPlayer() == ply or ply:GetActiveWeapon() == NULL or ply:GetActiveWeapon():GetClass() ~= 'weapon_stungun' then continue end
             render.SetMaterial(LASER)
             local bone = ply:LookupBone("ValveBiped.Bip01_R_Hand")
@@ -190,7 +190,7 @@ if CLIENT then
         cam.End3D2D()
     end
 
-    function SWEP:DrawScreen(x, y, w, h)
+    function SWEP:DrawScreen()
         local power = self:GetNWInt('power', 0)
         local i = power / 10
         draw.RoundedBox(0, 0, 0, 6, 10, Color(25, 25, 25, 255))

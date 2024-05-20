@@ -2,7 +2,7 @@
 local MODULE = MODULE
 ----------------------------------------------------------------------------------------------
 function MODULE:SetupInventorySearch(client, target)
-    local function searcherCanAccess(inventory, action, context)
+    local function searcherCanAccess(_, _, context)
         if context.client == client then return true end
     end
 
@@ -37,7 +37,7 @@ function MODULE:searchPlayer(client, target)
 end
 
 ----------------------------------------------------------------------------------------------
-function MODULE:CanPlayerInteractItem(client, action, item)
+function MODULE:CanPlayerInteractItem(client)
     if IsValid(client:getNetVar("searcher")) then return false end
 end
 

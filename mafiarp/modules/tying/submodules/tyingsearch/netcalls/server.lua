@@ -3,7 +3,7 @@ local MODULE = MODULE
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 netstream.Hook("searchExit", function(client) MODULE:stopSearching(client) end)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-net.Receive("ApproveSearch", function(len, client)
+net.Receive("ApproveSearch", function(_, client)
     local requester = client.SearchRequested
     if not requester then return end
     if not requester.SearchRequested then return end

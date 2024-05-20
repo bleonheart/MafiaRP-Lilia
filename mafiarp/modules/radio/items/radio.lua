@@ -11,7 +11,7 @@ ITEM.functions.enable = {
         local client = item.player
         local items = client:getChar():getInv():getItems()
         client.RadioCount = client.RadioCount or {}
-        for k, v in pairs(items) do
+        for _, v in pairs(items) do
             if v.id ~= item.id and (v.uniqueID == item.uniqueID and v:getData("enabled")) then
                 client:notify("You already have a radio equipped!")
                 return false
@@ -68,7 +68,6 @@ function ITEM:getDesc()
         str = "A Pager that allows you to send a signal to other characters in distance.\nPower: %s\nFrequency: %s"
         return Format(str, self:getData("enabled") and "On" or "Off", self:getData("freq", "000.0"))
     else
-        local data = self.entity:getData()
         str = "A Functional Pager. Power: %s Frequency: %s"
         return Format(str, self.entity:getData("enabled") and "On" or "Off", self.entity:getData("freq", "000.0"))
     end

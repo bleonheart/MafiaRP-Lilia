@@ -3,7 +3,7 @@ local MODULE = MODULE
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 MODULE.searchPanels = MODULE.searchPanels or {}
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-net.Receive("RequestID", function(len, client)
+net.Receive("RequestID", function()
     lia.util.notifQuery("A player is requesting to see your ID.", "Accept", "Deny", true, NOT_CORRECT, function(code)
         if code == 1 then
             net.Start("ApproveID")
@@ -59,7 +59,7 @@ netstream.Hook("searchExit", function()
 end)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-net.Receive("RequestSearch", function(len, client)
+net.Receive("RequestSearch", function()
     lia.util.notifQuery("A player is requesting to search your inventory.", "Accept", "Deny", true, NOT_CORRECT, function(code)
         if code == 1 then
             net.Start("ApproveSearch")
