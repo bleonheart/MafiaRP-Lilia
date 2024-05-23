@@ -78,7 +78,7 @@ function playerMeta:setRagdolledTase(state, time)
                     self:SetPos(entity:GetPos())
                     if velocity:Length2D() >= 8 then
                         if not entity.liaPausing then
-                            self:stopAction()
+                            self:setAction()
                             entity.liaPausing = true
                         end
                         return
