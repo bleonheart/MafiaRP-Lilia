@@ -99,7 +99,7 @@ end
 if CLIENT then
     local LASER = Material('cable/redlaser')
     local function DrawLaser()
-        for _, ply in pairs(player.Iterator()) do
+        for _, ply in pairs(player.GetAll()) do
             if not ply:Alive() or LocalPlayer() == ply or ply:GetActiveWeapon() == NULL or ply:GetActiveWeapon():GetClass() ~= 'weapon_stungun' then continue end
             render.SetMaterial(LASER)
             local bone = ply:LookupBone("ValveBiped.Bip01_R_Hand")
