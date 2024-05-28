@@ -1,5 +1,5 @@
 ﻿--- Configuration for Cigarette Pack item.
--- @items CigarettePack
+-- @structureitems CigarettePack
 
 --- This table defines the fields of the cigarette pack item.
 -- @table Configurations

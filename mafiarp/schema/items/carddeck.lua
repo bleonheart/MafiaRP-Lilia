@@ -1,5 +1,5 @@
 ﻿--- Configuration for Card Deck item.
--- @items CardDeck
+-- @structureitems CardDeck
 
 --- This table defines the fields of the Card Deck item.
 -- @table Configurations
