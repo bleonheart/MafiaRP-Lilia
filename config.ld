@@ -1,10 +1,10 @@
 file = {
-	"skeleton",
+	"mafiarp",
 }
 
 dir = "docs/html"
-project = "Skeleton"
-title = "Skeleton Documentation"
+project = "MafiaRP"
+title = "MafiaRP Documentation"
 no_space_before_args = true
 style = "docs/css"
 template = "docs/templates"
