@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Cigarette - MafiaRP Schema Documentation</title>
+		<title>UniversalAmmunition - MafiaRP Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Cigarette - MafiaRP Schema Documentation" />
+		<meta property="og:title" content="UniversalAmmunition - MafiaRP Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Cigarette item." />
+			<meta property="og:description" content="Structure of UniversalAmmunition Item." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -27,13 +27,35 @@
 	<section>
 				<details class="category" open>
 					<summary>
-						<h2>Items</h2>
+						<h2>Structures - Items</h2>
 					</summary>
 
 					<ul>
 							<li>
 									<details >
-									<summary><a href="../../items/carddeck/">CardDeck</a></summary>
+									<summary><a href="../../structures - items/carddeck/">CardDeck</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../structures - items/cigarette/">Cigarette</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../structures - items/cigarettepack/">CigarettePack</a></summary>
 
 									<ul>
 
@@ -44,29 +66,7 @@
 							</li>
 							<li>
 									<details open>
-									<summary><a href="../../items/cigarette/">Cigarette</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../items/cigarettepack/">CigarettePack</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../items/universalammunition/">UniversalAmmunition</a></summary>
+									<summary><a href="../../structures - items/universalammunition/">UniversalAmmunition</a></summary>
 
 									<ul>
 
@@ -79,13 +79,13 @@
 				</details>
 				<details class="category" open>
 					<summary>
-						<h2>Configurations</h2>
+						<h2>Config - General</h2>
 					</summary>
 
 					<ul>
 							<li>
 									<details >
-									<summary><a href="../../configurations/lilia/">Lilia</a></summary>
+									<summary><a href="../../config - general/lilia/">Lilia</a></summary>
 
 									<ul>
 
@@ -96,7 +96,7 @@
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../configurations/schema/">Schema</a></summary>
+									<summary><a href="../../config - general/schema/">Schema</a></summary>
 
 									<ul>
 
@@ -113,8 +113,8 @@
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Cigarette</h1>
-	<h2>Configuration for Cigarette item.</h2>
+	<h1>UniversalAmmunition</h1>
+	<h2>Structure of UniversalAmmunition Item.</h2>
 </header>
 
 <p>
@@ -129,7 +129,7 @@
 					<h1><span class="realm shared"></span></span>Configurations</h1>
 				</a>
 
-					<p>This table defines the fields of the cigarette item.</p>
+					<p>This table defines the fields of the universal ammo item.</p>
 			</header>
 
 
@@ -166,6 +166,72 @@
 
 
 								<p> The model of the item | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">width</span>
+
+
+
+								<p> The width of the item in inventory | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">height</span>
+
+
+
+								<p> The height of the item in inventory | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">health</span>
+
+
+
+								<p> The amount of health the item restores | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ammoAmount</span>
+
+
+
+								<p> The amount of ammunition in the box | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">category</span>
+
+
+
+								<p> The category of the item | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">blacklistedWeapons</span>
+
+
+
+								<p> The list of weapons that can't use this ammunition | <strong>table</strong></p>
 							</li>
 					</ul>
 
