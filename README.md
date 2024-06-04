@@ -8,7 +8,9 @@ MafiaRP is a roleplay schema for [Lilia](https://github.com/LiliaFramework/Lilia
  
 - Stun Gun
 
-- Tying (Includes search functionality and custom animations)
+- Tying
+
+- Tying Search
 
 # Support
 
