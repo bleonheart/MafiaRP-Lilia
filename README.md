@@ -1,7 +1,9 @@
-# MafiaRP
- 
-MafiaRP is a roleplay schema for [Lilia](https://github.com/LiliaFramework/Lilia).
+<h1 align="center">MafiaRP Schema</h1>
 
+<p align="center">
+  <img src="https://i.imgur.com/yY3wT30.png" alt="Lilia Icon">
+</p>
+ 
 # Contents
 
 - Radio
