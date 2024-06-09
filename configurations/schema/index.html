@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Cigarette - MafiaRP Documentation</title>
+		<title>Schema - MafiaRP Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Cigarette - MafiaRP Documentation" />
+		<meta property="og:title" content="Schema - MafiaRP Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Cigarette item." />
+			<meta property="og:description" content="Schema configuration options." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -27,13 +27,13 @@
 	<section>
 				<details class="category" open>
 					<summary>
-						<h2>Structures - Items</h2>
+						<h2>Configurations</h2>
 					</summary>
 
 					<ul>
 							<li>
 									<details >
-									<summary><a href="../../structures - items/carddeck/">CardDeck</a></summary>
+									<summary><a href="../../configurations/lilia/">Lilia</a></summary>
 
 									<ul>
 
@@ -44,7 +44,7 @@
 							</li>
 							<li>
 									<details open>
-									<summary><a href="../../structures - items/cigarette/">Cigarette</a></summary>
+									<summary><a href="../../configurations/schema/">Schema</a></summary>
 
 									<ul>
 
@@ -55,7 +55,7 @@
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../structures - items/cigarettepack/">CigarettePack</a></summary>
+									<summary><a href="../../configurations/temp/">Temp</a></summary>
 
 									<ul>
 
@@ -66,26 +66,7 @@
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../structures - items/universalammunition/">UniversalAmmunition</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
-						<h2>Config - Module</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../config - module/temp/">Temp</a></summary>
+									<summary><a href="../../configurations/temp/">Temp</a></summary>
 
 									<ul>
 
@@ -96,48 +77,7 @@
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../config - module/temp/">Temp</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../config - module/temp/">Temp</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
-						<h2>Config - General</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../config - general/lilia/">Lilia</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../config - general/schema/">Schema</a></summary>
+									<summary><a href="../../configurations/temp/">Temp</a></summary>
 
 									<ul>
 
@@ -154,12 +94,15 @@
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Cigarette</h1>
-	<h2>Configuration for Cigarette item.</h2>
+	<h1>Schema</h1>
+	<h2>Schema configuration options.</h2>
 </header>
 
 <p>
 
+
+<pre><code>This is meant to define the Schema's default information.
+</code></pre>
 </p>
 
 	<h1 class="title">Tables</h1>
@@ -170,7 +113,8 @@
 					<h1><span class="realm shared"></span></span>Configurations</h1>
 				</a>
 
-					<p>This table defines the fields of the cigarette item.</p>
+					<p>A list of schema fields that define the gamemode you are making.
+ These options are defined by the 'SCHEMA' table.</p>
 			</header>
 
 
@@ -184,7 +128,18 @@
 
 
 
-								<p> The name of the item | <strong>string</strong></p>
+								<p> Controls the name of the schema | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">author</span>
+
+
+
+								<p> Specifies the author of the schema | <strong>string</strong></p>
 							</li>
 					</ul>
 
@@ -195,18 +150,7 @@
 
 
 
-								<p> The description of the item | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">model</span>
-
-
-
-								<p> The model of the item | <strong>string</strong></p>
+								<p> Defines the description of the schema | <strong>string</strong></p>
 							</li>
 					</ul>
 
