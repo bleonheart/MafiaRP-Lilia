@@ -2,5 +2,6 @@
 {
 	"base"		"lilia"
 	"title"		"MafiaRP"
-	"author"	"Leonheart"
+	"author"	"Samael"
+	"category"	"rp"
 }
