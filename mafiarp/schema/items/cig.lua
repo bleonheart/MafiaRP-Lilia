@@ -1,12 +1,4 @@
-﻿--- Configuration for Cigarette item.
--- @structureitems Cigarette
-
---- This table defines the fields of the cigarette item.
--- @table Configurations
--- @realm shared
--- @field name The name of the item | **string**
--- @field desc The description of the item | **string**
--- @field model The model of the item | **string**
+﻿
 ITEM.name = "Cigarette"
 ITEM.desc = "A Cigarette."
 ITEM.model = "models/Items/BoxSRounds.mdl"
