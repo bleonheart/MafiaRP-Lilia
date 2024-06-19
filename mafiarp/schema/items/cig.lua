@@ -1,5 +1,4 @@
-﻿
-ITEM.name = "Cigarette"
+﻿ITEM.name = "Cigarette"
 ITEM.desc = "A Cigarette."
 ITEM.model = "models/Items/BoxSRounds.mdl"
 ITEM.functions.TakeOutCig = {

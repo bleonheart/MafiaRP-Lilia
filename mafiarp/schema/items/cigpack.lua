@@ -1,5 +1,4 @@
-﻿
-ITEM.name = "Cigarette Pack"
+﻿ITEM.name = "Cigarette Pack"
 ITEM.desc = "A pack of cigarettes."
 ITEM.model = "models/Items/BoxSRounds.mdl"
 ITEM.price = 50
