@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Schema - MafiaRP Documentation</title>
+		<title>EnhancedDeath - MafiaRP Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Schema - MafiaRP Documentation" />
+		<meta property="og:title" content="EnhancedDeath - MafiaRP Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Schema configuration options." />
+			<meta property="og:description" content="Configuration for Enhanced Death Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -32,7 +32,7 @@
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/enhanceddeath/">EnhancedDeath</a></summary>
 
 									<ul>
@@ -65,7 +65,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/schema/">Schema</a></summary>
 
 									<ul>
@@ -83,27 +83,23 @@
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Schema</h1>
-	<h2>Schema configuration options.</h2>
+	<h1>EnhancedDeath</h1>
+	<h2>Configuration for Enhanced Death Module.</h2>
 </header>
 
 <p>
 
-
-<pre><code>This is meant to define the Schema's default information.
-</code></pre>
 </p>
 
 	<h1 class="title">Tables</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configurations">
-					<h1><span class="realm shared"></span></span>Configurations</h1>
+				<a class="anchor" id="Configuration">
+					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>A list of schema fields that define the gamemode you are making.
- These options are defined by the 'SCHEMA' table.</p>
+					<p>This table defines the default settings for the Enhanced Death Module.</p>
 			</header>
 
 
@@ -113,33 +109,44 @@
 					<ul>
 
 							<li>
-								<span class="tag parameter">name</span>
+								<span class="tag parameter">HospitalLocations</span>
 
 
 
-								<p> Controls the name of the schema | <strong>string</strong></p>
+								<p> Indicates the locations of hospitals on the map | <strong>table</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">author</span>
+								<span class="tag parameter">HospitalsEnabled</span>
 
 
 
-								<p> Specifies the author of the schema | <strong>string</strong></p>
+								<p> Indicates whether hospitals are enabled | <strong>bool</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">desc</span>
+								<span class="tag parameter">LoseMoneyOnDeath</span>
 
 
 
-								<p> Defines the description of the schema | <strong>string</strong></p>
+								<p> Determines if players lose money upon death | <strong>bool</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">DeathMoneyLoss</span>
+
+
+
+								<p> Specifies the amount of money lost upon death | <strong>number</strong></p>
 							</li>
 					</ul>
 
