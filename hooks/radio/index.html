@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>EnhancedDeath - MafiaRP Documentation</title>
+		<title>Radio - MafiaRP Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="EnhancedDeath - MafiaRP Documentation" />
+		<meta property="og:title" content="Radio - MafiaRP Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Enhanced Death Module." />
+			<meta property="og:description" content="Hook Documentation for Radio Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -32,7 +32,7 @@
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks/radio/">Radio</a></summary>
 
 									<ul>
@@ -85,7 +85,7 @@ StartHandcuffAnim											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/enhanceddeath/">EnhancedDeath</a></summary>
 
 									<ul>
@@ -107,7 +107,7 @@ StartHandcuffAnim											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/radio/">Radio</a></summary>
 
 									<ul>
@@ -136,70 +136,38 @@ StartHandcuffAnim											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>EnhancedDeath</h1>
-	<h2>Configuration for Enhanced Death Module.</h2>
+	<h1>Radio</h1>
+	<h2>Hook Documentation for Radio Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="ShouldRadioBeep">
+					<h1><span class="realm server"></span></span>MODULE:ShouldRadioBeep(client)</h1>
 				</a>
 
-					<p>This table defines the default settings for the Enhanced Death Module.</p>
+					<p>Called to determine if a radio beep sound should be played for a player.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">HospitalLocations</span>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
 
 
-
-								<p> Indicates the locations of hospitals on the map | <strong>table</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">HospitalsEnabled</span>
-
-
-
-								<p> Indicates whether hospitals are enabled | <strong>bool</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">LoseMoneyOnDeath</span>
-
-
-
-								<p> Determines if players lose money upon death | <strong>bool</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">DeathMoneyLoss</span>
-
-
-
-								<p> Specifies the amount of money lost upon death | <strong>number</strong></p>
+								<p> Player The player who is being checked for a radio beep.</p>
 							</li>
 					</ul>
 

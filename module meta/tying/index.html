@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>EnhancedDeath - MafiaRP Documentation</title>
+		<title>Tying - MafiaRP Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="EnhancedDeath - MafiaRP Documentation" />
+		<meta property="og:title" content="Tying - MafiaRP Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Enhanced Death Module." />
+			<meta property="og:description" content="Meta Tables for Tying." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -56,7 +56,7 @@ ShouldRadioBeep											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../module meta/tying/">Tying</a></summary>
 
 									<ul>
@@ -85,7 +85,7 @@ StartHandcuffAnim											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/enhanceddeath/">EnhancedDeath</a></summary>
 
 									<ul>
@@ -136,72 +136,38 @@ StartHandcuffAnim											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>EnhancedDeath</h1>
-	<h2>Configuration for Enhanced Death Module.</h2>
+	<h1>Tying</h1>
+	<h2>Meta Tables for Tying.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="EndHandcuffAnim">
+					<h1><span class="realm server"></span></span>meta:EndHandcuffAnim()</h1>
 				</a>
 
-					<p>This table defines the default settings for the Enhanced Death Module.</p>
+					<p>Ends the handcuff animation for the player by resetting bone angles.</p>
 			</header>
 
 
-					<h3>Fields</h3>
 
 
-					<ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="StartHandcuffAnim">
+					<h1><span class="realm server"></span></span>meta:StartHandcuffAnim()</h1>
+				</a>
 
-							<li>
-								<span class="tag parameter">HospitalLocations</span>
+					<p>Starts the handcuff animation for the player by manipulating bone angles.</p>
+			</header>
 
-
-
-								<p> Indicates the locations of hospitals on the map | <strong>table</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">HospitalsEnabled</span>
-
-
-
-								<p> Indicates whether hospitals are enabled | <strong>bool</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">LoseMoneyOnDeath</span>
-
-
-
-								<p> Determines if players lose money upon death | <strong>bool</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">DeathMoneyLoss</span>
-
-
-
-								<p> Specifies the amount of money lost upon death | <strong>number</strong></p>
-							</li>
-					</ul>
 
 
 
