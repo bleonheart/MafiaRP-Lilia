@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Tying - MafiaRP Documentation</title>
+		<title>Alcoholism - MafiaRP Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Tying - MafiaRP Documentation" />
+		<meta property="og:title" content="Alcoholism - MafiaRP Documentation" />
 		<meta property="og:site_name" content="MafiaRP Documentation" />
 
-			<meta property="og:description" content="Meta Tables for Tying." />
+			<meta property="og:description" content="Meta Tables for Alcoholism." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -56,7 +56,7 @@ ShouldRadioBeep											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../player meta/alcoholism/">Alcoholism</a></summary>
 
 									<ul>
@@ -87,7 +87,7 @@ ResetBAC											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../player meta/tying/">Tying</a></summary>
 
 									<ul>
@@ -127,7 +127,7 @@ StartHandcuffAnim											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/alcoholism/">Alcoholism</a></summary>
 
 									<ul>
@@ -200,8 +200,8 @@ StartHandcuffAnim											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Tying</h1>
-	<h2>Meta Tables for Tying.</h2>
+	<h1>Alcoholism</h1>
+	<h2>Meta Tables for Alcoholism.</h2>
 </header>
 
 <p>
@@ -212,24 +212,87 @@ StartHandcuffAnim											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="EndHandcuffAnim">
-					<h1><span class="realm server"></span></span>playerMeta:EndHandcuffAnim()</h1>
+				<a class="anchor" id="AddBAC">
+					<h1><span class="realm server"></span></span>playerMeta:AddBAC(amt)</h1>
 				</a>
 
-					<p>Ends the handcuff animation for the player by resetting bone angles.</p>
+					<p>Adds a specified amount to the player's BAC, clamping the value between 0 and 100.</p>
 			</header>
 
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amt</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The amount to add to the BAC.</p>
+							</li>
+					</ul>
 
 
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="StartHandcuffAnim">
-					<h1><span class="realm server"></span></span>playerMeta:StartHandcuffAnim()</h1>
+				<a class="anchor" id="GetBAC">
+					<h1><span class="realm shared"></span></span>playerMeta:GetBAC()</h1>
 				</a>
 
-					<p>Starts the handcuff animation for the player by manipulating bone angles.</p>
+					<p>Retrieves the player's current BAC.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">integer</span>
+
+								<p>The current BAC of the player.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="IsDrunk">
+					<h1><span class="realm shared"></span></span>playerMeta:IsDrunk()</h1>
+				</a>
+
+					<p>Checks if the player's BAC is above the drunk notification threshold.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the player's BAC is above the drunk notification threshold, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ResetBAC">
+					<h1><span class="realm server"></span></span>playerMeta:ResetBAC()</h1>
+				</a>
+
+					<p>Resets the player's blood alcohol content (BAC) to 0.</p>
 			</header>
 
 

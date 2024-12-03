@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Tying - MafiaRP Documentation</title>
+		<title>Alcoholism - MafiaRP Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Tying - MafiaRP Documentation" />
+		<meta property="og:title" content="Alcoholism - MafiaRP Documentation" />
 		<meta property="og:site_name" content="MafiaRP Documentation" />
 
-			<meta property="og:description" content="Meta Tables for Tying." />
+			<meta property="og:description" content="Configuration for Alcoholism Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -56,7 +56,7 @@ ShouldRadioBeep											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../player meta/alcoholism/">Alcoholism</a></summary>
 
 									<ul>
@@ -87,7 +87,7 @@ ResetBAC											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../player meta/tying/">Tying</a></summary>
 
 									<ul>
@@ -127,7 +127,7 @@ StartHandcuffAnim											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/alcoholism/">Alcoholism</a></summary>
 
 									<ul>
@@ -200,38 +200,83 @@ StartHandcuffAnim											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Tying</h1>
-	<h2>Meta Tables for Tying.</h2>
+	<h1>Alcoholism</h1>
+	<h2>Configuration for Alcoholism Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Functions</h1>
+	<h1 class="title">Tables</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="EndHandcuffAnim">
-					<h1><span class="realm server"></span></span>playerMeta:EndHandcuffAnim()</h1>
+				<a class="anchor" id="Configuration">
+					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>Ends the handcuff animation for the player by resetting bone angles.</p>
+					<p>This table defines the default settings for the Alcoholism Module.</p>
 			</header>
 
 
+					<h3>Fields</h3>
 
 
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="StartHandcuffAnim">
-					<h1><span class="realm server"></span></span>playerMeta:StartHandcuffAnim()</h1>
-				</a>
+					<ul>
 
-					<p>Starts the handcuff animation for the player by manipulating bone angles.</p>
-			</header>
+							<li>
+								<span class="tag parameter">TickTime</span>
 
+
+
+								<p> Specifies the tick time in seconds for alcohol effects | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">DegradeRate</span>
+
+
+
+								<p> Specifies the rate at which alcohol effects degrade over time | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">AddAlpha</span>
+
+
+
+								<p> Specifies the alpha value added to the screen for alcohol effects | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">EffectDelay</span>
+
+
+
+								<p> Specifies the delay in seconds before alcohol effects are applied | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">DrunkNotifyThreshold</span>
+
+
+
+								<p> Specifies the threshold value for notifying players of drunkenness | <strong>number</strong></p>
+							</li>
+					</ul>
 
 
 
