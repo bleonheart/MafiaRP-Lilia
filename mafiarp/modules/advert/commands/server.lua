@@ -1,5 +1,4 @@
-local MODULE = MODULE
-
+﻿local MODULE = MODULE
 lia.command.add("advertisement", {
     adminOnly = false,
     syntax = "<string factions> <string text>",

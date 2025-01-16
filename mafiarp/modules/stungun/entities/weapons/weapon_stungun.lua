@@ -34,7 +34,6 @@ SWEP.IronSightsAng = Vector(0.9, 0, 0)
 SWEP.ViewModelFlip = false
 SWEP.ViewModelFOV = 65
 SWEP.LastFired = 0
-
 function SWEP:Initialize()
     if SERVER then self.LastFired = 0 end
 end

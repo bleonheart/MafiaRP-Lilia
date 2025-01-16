@@ -1,4 +1,4 @@
-lia.command.add("classbroadcast", {
+﻿lia.command.add("classbroadcast", {
     adminOnly = false,
     syntax = "<string classes> <string text>",
     onRun = function() end

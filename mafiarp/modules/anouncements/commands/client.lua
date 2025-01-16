@@ -1,4 +1,4 @@
-lia.command.add("announce", {
+﻿lia.command.add("announce", {
     superAdminOnly = true,
     syntax = "<string factions> <string text>",
     privilege = "Make Announcements",

@@ -1,6 +1,5 @@
---- Configuration for Advert Module.
+﻿--- Configuration for Advert Module.
 -- @configuration Advert
-
 --- This table defines the default settings for the Advert Module.
 -- @realm shared
 -- @table Configuration
